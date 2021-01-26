@@ -1521,3 +1521,6 @@ em.search-keyword {
   color: #fff;
   background-color: #999999;
   text-shadow: 0; }
+
+.vcopy.txt-right {
+  display: none; }
