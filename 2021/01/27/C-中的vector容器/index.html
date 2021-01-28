@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>C++中的vector容器 | 修行小生</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">C++中的vector容器</h1><a id="logo" href="/.">修行小生</a><p class="description">知识源于积累</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/project/"><i class="fa fa-tasks"> 项目</i></a><a href="/tags/"><i class="fa fa-tags"> 标签</i></a><a href="/papers/"><i class="fa fa-sticky-note"> 论文</i></a><a href="/guesbook/"><i class="fa fa-book"> 留言</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">C++中的vector容器</h1><div class="post-meta">2021-01-27<span> | </span><span class="category"><a href="/categories/C/">C++</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" href="/2021/01/27/C-%E4%B8%AD%E7%9A%84vector%E5%AE%B9%E5%99%A8/#vcomment"><span class="valine-comment-count" data-xid="/2021/01/27/C-%E4%B8%AD%E7%9A%84vector%E5%AE%B9%E5%99%A8/"></span><span> 条评论</span></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-vector%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">1.vector的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%B9%E5%99%A8%E5%85%B7%E5%A4%87%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-text">2.容器具备的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.基本函数实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">(1)构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%A2%9E%E5%8A%A0%E5%87%BD%E6%95%B0"><span class="toc-text">(2)增加函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4%E5%87%BD%E6%95%B0"><span class="toc-text">(3)删除函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E9%81%8D%E5%8E%86%E5%87%BD%E6%95%B0"><span class="toc-text">(4)遍历函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-text">(5)判断函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%A4%A7%E5%B0%8F%E5%87%BD%E6%95%B0"><span class="toc-text">(6)大小函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-text">(7)其他函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%90%84%E7%A7%8D%E5%87%BD%E6%95%B0%E5%B0%8F%E7%BB%93"><span class="toc-text">(8)各种函数小结</span></a></li></ol></li></ol></div></div><div class="post-content"><h3 id="1-vector的含义"><a href="#1-vector的含义" class="headerlink" title="1.vector的含义"></a>1.vector的含义</h3><p>Vector(向量)是一个封装了动态大小数组的顺序容器(Sequence Container)，它可以存放各种类型的对象，可以简单理解为，vector是一个能够任意类型的动态数组。</p>
+<h3 id="2-容器具备的特性"><a href="#2-容器具备的特性" class="headerlink" title="2.容器具备的特性"></a>2.容器具备的特性</h3><ul>
+<li><p><strong>顺序序列</strong></p>
+<p>顺序容器中的元素按照严格的线性顺序排序，可以通过元素在序列中的位置访问对应的元素。</p>
+</li>
+<li><p><strong>动态数组</strong></p>
+<p>动态数组支持对序列中的任意元素进行快速直接访问，甚至可以通过指针算术进行操作，也可以在序列末尾相对快速地添加或删除元素。</p>
+</li>
+<li><p><strong>能够感知内存分配器</strong></p>
+<p>容器使用一个内存分配器对象来动态地处理它的存储需求。</p>
+</li>
+</ul>
+<h3 id="3-基本函数实现"><a href="#3-基本函数实现" class="headerlink" title="3.基本函数实现"></a>3.基本函数实现</h3><h4 id="1-构造函数"><a href="#1-构造函数" class="headerlink" title="(1)构造函数"></a>(1)构造函数</h4><ul>
+<li>vector() : 创建一个空的vector</li>
+<li>vector(int nSize) ：创建一个vector，元素个数为nSize，元素为int类型</li>
+<li>vector(int nSize, const t&amp; t) : 创建一个vector，元素个数为nSize，且值均为t</li>
+<li>vector(const vector&amp;) ：复制构造函数</li>
+<li>vector(begin, end) ：复制另一个数组[begin, end)区间内的元素到vector中</li>
+</ul>
+<h4 id="2-增加函数"><a href="#2-增加函数" class="headerlink" title="(2)增加函数"></a>(2)增加函数</h4><ul>
+<li>void push_back(const T&amp; x) ：向量尾部增加一个元素x</li>
+<li>iterator insert(iterator it, const T&amp; x) ：向量中迭代器指向的元素前增加一个元素x(可以理解为向前插入元素x)</li>
+<li>iterator insert(iterator it, int n, const T&amp; x) : 向量中迭代器指向的元素前增加n个相同的元素x</li>
+<li>iterator insert(iterator it, const_iterator first, const_iterator last) : 向量中迭代器指向元素前插入；另一个相同类型向量的[first, last)区间的数据</li>
+</ul>
+<h4 id="3-删除函数"><a href="#3-删除函数" class="headerlink" title="(3)删除函数"></a>(3)删除函数</h4><ul>
+<li>iterator erase(iterator it) : 删除向量中迭代器指向的元素</li>
+<li>iterator erase(first, last) : 删除向量中[first, last)中的元素</li>
+<li>void pop_back() : 删除向量中最后一个元素</li>
+<li>void clear() : 清空向量中的所有元素</li>
+</ul>
+<h4 id="4-遍历函数"><a href="#4-遍历函数" class="headerlink" title="(4)遍历函数"></a>(4)遍历函数</h4><ul>
+<li>reference at(int pos) : 返回pos位置元素的引用</li>
+<li>reference front() : 返回首元素的引用</li>
+<li>reference back() : 返回尾元素的引用</li>
+<li>iterator begin() : 返回向量头指针，指向第一个元素</li>
+<li>iterator end() :  返回向量尾指针，指向向量最后一个元素的下一个位置</li>
+<li>reverse_iterator rbegin() : 反向迭代器，指向最后一个元素</li>
+<li>reverse_iterator rend() : 反向迭代器，指向第一个元素之前的位置</li>
+</ul>
+<h4 id="5-判断函数"><a href="#5-判断函数" class="headerlink" title="(5)判断函数"></a>(5)判断函数</h4><ul>
+<li>bool empty() const : 判断向量是否为空。若为空，向量中无元素</li>
+</ul>
+<h4 id="6-大小函数"><a href="#6-大小函数" class="headerlink" title="(6)大小函数"></a>(6)大小函数</h4><ul>
+<li>int size() const : 返回向量中元素的个数</li>
+<li>int capacity() const : 返回当前向量所能容纳的最大元素值</li>
+<li>int max_size() const ：返回最大可允许的vector元素数量</li>
+</ul>
+<h4 id="7-其他函数"><a href="#7-其他函数" class="headerlink" title="(7)其他函数"></a>(7)其他函数</h4><ul>
+<li>void swap(vector&amp;) ：交换两个同类型向量的数据</li>
+<li>void assign(int n, const T&amp; x) : 设置向量中前n个元素的值为x</li>
+<li>void assign(const_interator first, const_iterator last) : 向量中[first, last)中元素设置当前向量元素</li>
+</ul>
+<h4 id="8-各种函数小结"><a href="#8-各种函数小结" class="headerlink" title="(8)各种函数小结"></a>(8)各种函数小结</h4><table>
+<thead>
+<tr>
+<th align="center">成员函数</th>
+<th>函数功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><em>push_back</em></td>
+<td><em>在数组的最后添加一个数据</em></td>
+</tr>
+<tr>
+<td align="center"><em>pop_back</em></td>
+<td><em>去掉数组的最后一个数据</em></td>
+</tr>
+<tr>
+<td align="center"><em>at</em></td>
+<td><em>得到编号位置的数据</em></td>
+</tr>
+<tr>
+<td align="center"><em>begin</em></td>
+<td><em>得到数组头的指针</em></td>
+</tr>
+<tr>
+<td align="center"><em>end</em></td>
+<td><em>得到数组的最后一个单元+1的指针</em></td>
+</tr>
+<tr>
+<td align="center"><em>front</em></td>
+<td><em>得到数组头的引用</em></td>
+</tr>
+<tr>
+<td align="center"><em>back</em></td>
+<td><em>到数组的最后一个单元的引用</em></td>
+</tr>
+<tr>
+<td align="center"><em>max_size</em></td>
+<td><em>得到vector最大可以是多大</em></td>
+</tr>
+<tr>
+<td align="center"><em>capacity</em></td>
+<td><em>当前vector分配的大小</em></td>
+</tr>
+<tr>
+<td align="center"><em>size</em></td>
+<td><em>当前使用数据的大小</em></td>
+</tr>
+<tr>
+<td align="center"><em>resize</em></td>
+<td><em>改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</em></td>
+</tr>
+<tr>
+<td align="center"><em>reserve</em></td>
+<td><em>改变当前vecotr所分配空间的大小</em></td>
+</tr>
+<tr>
+<td align="center"><em>erase</em></td>
+<td><em>删除指针指向的数据项</em></td>
+</tr>
+<tr>
+<td align="center"><em>clear</em></td>
+<td><em>清空当前的vector</em></td>
+</tr>
+<tr>
+<td align="center"><em>rbegin</em></td>
+<td><em>将vector反转后的开始指针返回(其实就是原来的end-1)</em></td>
+</tr>
+<tr>
+<td align="center"><em>rend</em></td>
+<td><em>vector反转构的结束指针返回(其实就是原来的begin-1)</em></td>
+</tr>
+<tr>
+<td align="center"><em>empty</em></td>
+<td><em>判断vector是否为空</em></td>
+</tr>
+<tr>
+<td align="center"><em>swap</em></td>
+<td><em>与另一个vector交换数据</em></td>
+</tr>
+</tbody></table>
+</div><div class="post-copyright"><script type="text/javascript" src="/js/copyright.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copyright.css"><p><span>本文标题：</span>C++中的vector容器</p><p><span>文章作者：</span>wangjiaqing</p><p><span>发布时间：</span>2021-01-27</p><p><span>最后更新：</span>2021-01-28</p><p><span>原始链接：</span><a href="/2021/01/27/C-中的vector容器/">http://www.wangjiaqingll.com/2021/01/27/C-%E4%B8%AD%E7%9A%84vector%E5%AE%B9%E5%99%A8/</a><span class="copy-path"><i class="fa fa-clipboard" data-clipboard-text="http://www.wangjiaqingll.com/2021/01/27/C-%E4%B8%AD%E7%9A%84vector%E5%AE%B9%E5%99%A8/"></i></span></p><p><span>版权声明：</span>本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！</p></div><br><div class="tags"><a href="/tags/C/"><i class="fa fa-tag"></i>C++</a></div><div class="post-nav"><a class="next" href="/2021/01/27/const/">C++中的const</a></div><div id="vcomment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script><script>var notify = 'false' == 'true' ? true : false;
+var verify = 'false' == 'true' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'fQnOTFxIxzIFEgTf54SG9w5V-gzGzoHsz',
+  appKey:'phEn5sj2X0NzO89WznQ9hYIo',
+  placeholder:'输入你的评论\n',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})
+</script></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://www.wangjiaqingll.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">机器学习</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 15px;">算法</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/C/" style="font-size: 15px;">C++</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/01/27/C-%E4%B8%AD%E7%9A%84vector%E5%AE%B9%E5%99%A8/">C++中的vector容器</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/27/const/">C++中的const</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/24/conda%E6%8D%A2%E6%BA%90/">conda换源</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/23/vim%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">vim配置文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/23/python%E9%97%AD%E5%8C%85%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E7%90%86%E8%A7%A3/">python闭包与装饰器的理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/23/BP%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/">BP算法的实现</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/wangjiaqingll/" title="My Github" target="_blank">My Github</a><ul></ul><a href="http://www.bom-assistant.top/uestc/" title="Fleeuestc" target="_blank">Fleeuestc</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">修行小生.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
