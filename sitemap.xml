@@ -195,14 +195,14 @@
   </url>
   
   <url>
-    <loc>http://www.wangjiaqingll.com/categories/git/</loc>
+    <loc>http://www.wangjiaqingll.com/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.wangjiaqingll.com/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://www.wangjiaqingll.com/categories/git/</loc>
     <lastmod>2021-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
