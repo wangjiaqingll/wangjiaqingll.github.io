@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.51">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>乐宝不是酒的Wiki</title><meta name="description" content="Vue 驱动的静态网站生成器">
+    <link rel="modulepreload" href="/assets/app.ab5538ff.js"><link rel="modulepreload" href="/assets/404.html.5835aa2b.js"><link rel="modulepreload" href="/assets/404.html.c3e557d0.js"><link rel="prefetch" href="/assets/index.html.2cfcb0ee.js"><link rel="prefetch" href="/assets/index.html.b622b44a.js"><link rel="prefetch" href="/assets/CPP-language.html.c57b7b9a.js"><link rel="prefetch" href="/assets/index.html.a1fc17c4.js"><link rel="prefetch" href="/assets/index.html.937bead2.js"><link rel="prefetch" href="/assets/CPP-language.html.bdcc495e.js">
+    <link rel="stylesheet" href="/assets/style.f4d22aab.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a href="/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.ab5538ff.js" defer></script>
+  </body>
+</html>
