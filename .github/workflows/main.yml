@@ -19,18 +19,18 @@ jobs:
           # submodules: true
 
 
-      - name: 安装 pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
-          run_install: true
+#       - name: 安装 pnpm
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 7
+#           run_install: true
 
 
-      - name: 设置 Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: pnpm
+#       - name: 设置 Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+#           cache: pnpm
 
 #       - name: 安装依赖
 #         run: pnpm init && pnpm install --frozen-lockfile
@@ -49,5 +49,5 @@ jobs:
           branch: master
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           folder: docs/.vuepress/dist
-          BUILD_SCRIPT: pnpm init && pnpm install && pnpm run build
+          BUILD_SCRIPT: npm init && npm install && npm run build
 
