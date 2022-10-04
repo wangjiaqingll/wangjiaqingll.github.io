@@ -191,15 +191,15 @@ TCP族的协议有HTTP，HTTPS，SMTP，TelNet，FTP等，UDP族的协议有DNS�
 
 TCP的头部大致包括：源端口，目的端口，序号，确认号，标志位，校验和等等；
 
-![img](../%E7%AC%94%E8%AE%B0%E9%99%84%E4%BB%B6/20190618091023766.png)
+![TCP-herder](http://assets.wangjiaqingll.com/blog-wiki/tcp-header.png?e=1664880410&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:X9TBqEsqx-sumPzpVoPKE4x0u7o=)
 
 UDP的头部则包括：源端口，目的端口，长度，校验和；
 
-![img](../%E7%AC%94%E8%AE%B0%E9%99%84%E4%BB%B6/201906181539298.png)
+![UDP-header](http://assets.wangjiaqingll.com/blog-wiki/udp-header.png?e=1664880527&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:uO_zCdXamuIeaOof8hFsht_swvE=)
 
 IP数据包的头部包括：版本号、首部长度、16位标识，3位标志、13位偏移、源IP地址，目的IP地址，协议，校验和，总长度等等。
 
-![img](../%E7%AC%94%E8%AE%B0%E9%99%84%E4%BB%B6/20190617231311591.png)
+![IP-header](http://assets.wangjiaqingll.com/blog-wiki/udp-header.png?e=1664880527&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:uO_zCdXamuIeaOof8hFsht_swvE=)
 
 ## 16、在浏览器中输入URL后执行的全部过程
 
@@ -309,8 +309,6 @@ seq = C + H (源IP地址，目的IP地址，源端口，目的端口)。其中�
 
 ## 25、数字证书
 
-<img src="file:///C:/Users/wang/.config/joplin-desktop/resources/3b2b474fb588423a9f91e33649ef60b1.jpg" alt="   " style="zoom:50%;" />
-
 权威CA使用私钥将网站A的信息和消息摘要（签名S）进行加密打包形成数字证书。公钥给客户端。
 网站A将自己的信息和数字证书发给客户端，客户端用CA的公钥对数字证书进行解密，得到签名S，与手动将网站的信息进行消息摘要得到的结果S*进行对比，如果签名一致就证明网站A可以信任。
 
@@ -347,7 +345,7 @@ ping是使用ICMP协议来进行工作的， ICMP：网络控制报文协议。
 
 ## 29、DNS的工作过程和原理
 
-![img](file:///C:/Users/wang/.config/joplin-desktop/resources/8b17d64de81c4045b2561b0d783451c9.png)
+![dns-progress](http://assets.wangjiaqingll.com/blog-wiki/dns-progress.png?e=1664880594&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:iudteghXIg12T08a8ZTl8UQf6fQ=)
 
 DNS解析有两种方式：递归查询和迭代查询
 
