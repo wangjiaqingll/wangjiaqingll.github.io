@@ -18,7 +18,7 @@ githubUrl=git@github.com:wangjiaqingll/wangjiaqingll.github.io # 按你的代码
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl master:gh-pages # 推送到github
+git push -f $githubUrl master:gh-pages
 # git push -f $githubUrl master # 推送到github
 
 cd - # 退回开始所在目录
