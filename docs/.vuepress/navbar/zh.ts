@@ -7,7 +7,10 @@ export const zhNavbar = navbar([
       icon: "repo", 
       prefix: "/interview",
       children: [
-        { text: "C++语言基础", icon: "note", link: "/cpp-interview.md"},
+        { text: "C++基础", icon: "note", link: "/cpp-interview.md"},
+        { text: "操作系统", icon: "computer", link: "/system.md"},
+        { text: "数据库", icon: "mysql", link: "/database.md"},
+        { text: "计算机网络", icon: "network", link: "/network.md"},
       ]
     },
   // { text: "案例", icon: "discover", link: "/demo/" },

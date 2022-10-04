@@ -15,17 +15,17 @@ tagline: Wecome to lebao's wiki!
 
 features:
   - title: C++面试题
-    icon: repo
+    icon: code
     details:
     link: interview/cpp-interview.md
 
   - title: 操作系统面试题
-    icon: repo
+    icon: computer
     details:
     link: interview/system.md
 
   - title: 计算机网络面试题
-    icon: repo
+    icon: network
     details:
     link: interview/network.md
   # - title: 幻灯片页面
