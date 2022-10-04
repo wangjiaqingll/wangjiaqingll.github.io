@@ -14,9 +14,11 @@ export default hopeTheme({
 
   logo: "/lebao.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "wangjiaqingll",
 
-  docsDir: "demo/theme-docs/src",
+  docsRepo: "wangjiaqingll/wangjiaqingll.github.io",
+  docsBranch: "master",
+  docsDir: "docs",
 
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 
