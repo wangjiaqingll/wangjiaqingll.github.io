@@ -191,15 +191,15 @@ TCP族的协议有HTTP，HTTPS，SMTP，TelNet，FTP等，UDP族的协议有DNS�
 
 TCP的头部大致包括：源端口，目的端口，序号，确认号，标志位，校验和等等；
 
-![TCP-herder](http://assets.wangjiaqingll.com/blog-wiki/tcp-header.png?e=1664880410&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:X9TBqEsqx-sumPzpVoPKE4x0u7o=)
+![tcp-header](https://assets.wangjiaqingll.com/blog-wiki/tcp-header.png?e=1664884328&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:jwvht39uiwlTWmHBv51tg9FxwGM=)
 
 UDP的头部则包括：源端口，目的端口，长度，校验和；
 
-![UDP-header](http://assets.wangjiaqingll.com/blog-wiki/udp-header.png?e=1664880527&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:uO_zCdXamuIeaOof8hFsht_swvE=)
+![UDP-header](https://assets.wangjiaqingll.com/blog-wiki/udp-header.png?e=1664884363&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:Kr94fknmf4eRlkdMjcOk7k-GHzw=)
 
 IP数据包的头部包括：版本号、首部长度、16位标识，3位标志、13位偏移、源IP地址，目的IP地址，协议，校验和，总长度等等。
 
-![IP-header](http://assets.wangjiaqingll.com/blog-wiki/udp-header.png?e=1664880527&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:uO_zCdXamuIeaOof8hFsht_swvE=)
+![IP-header](https://assets.wangjiaqingll.com/blog-wiki/ip-header.png?e=1664884385&token=yY18s1LBPDyXOL0gKRG1cTB624r_2fOp-O4he3HN:tF57TYfUykscYiwCg62-LmX9h4M=)
 
 ## 16、在浏览器中输入URL后执行的全部过程
 
