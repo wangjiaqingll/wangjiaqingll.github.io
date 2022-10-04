@@ -4,14 +4,14 @@ icon: home
 title: 主页
 heroImage: /lebao.svg
 heroText: LeBao's Wiki
-tagline: 乐宝的知识小站
-actions:
-  - text: 使用指南 💡
-    link: /demo/
-    type: primary
+tagline:
+# actions:
+#   - text: 使用指南 💡
+#     link: /demo/
+#     type: primary
 
-  - text: 文档
-    link: /guide/
+#   - text: 文档
+#     link: /guide/
 
 features:
   - title: Markdown 增强
@@ -95,9 +95,9 @@ features:
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/advanced/pwa.html
 
   - title: 更多新特性
-    icon: book
+    icon: note
     details: 包括图标支持、全屏按钮、返回顶部按钮等
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/feature/
 copyright: false
-footer: MIT Licensed | Copyright © 2019-present Mr.Hope
+footer: MIT Licensed | Copyright © 2022-present LeBao
 ---
