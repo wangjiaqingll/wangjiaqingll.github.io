@@ -11,11 +11,11 @@ export default defineUserConfig({
       description: "",
     },
 
-    "/en/": {
-      lang: "en-US",
-      title: "LeBao's Wiki",
-      description: "",
-    },
+    // "/en/": {
+    //   lang: "en-US",
+    //   title: "LeBao's Wiki",
+    //   description: "",
+    // },
   },
 
   theme,

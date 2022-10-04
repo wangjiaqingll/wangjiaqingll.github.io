@@ -41,21 +41,21 @@ export default hopeTheme({
       },
     },
 
-    "/en/": {
-      // navbar
-      navbar: enNavbar,
+    // "/en/": {
+    //   // navbar
+    //   navbar: enNavbar,
 
-      // sidebar
-      sidebar: enSidebar,
+    //   // sidebar
+    //   sidebar: enSidebar,
 
-      footer: "LeBao's wiki",
+    //   footer: "LeBao's wiki",
 
-      displayFooter: true,
+    //   displayFooter: true,
 
-      metaLocales: {
-        editLink: "Edit this page on GitHub",
-      },
-    },
+    //   metaLocales: {
+    //     editLink: "Edit this page on GitHub",
+    //   },
+    // },
 
   },
 

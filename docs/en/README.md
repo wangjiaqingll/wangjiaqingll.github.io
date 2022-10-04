@@ -4,14 +4,14 @@ icon: home
 title: Home
 heroImage: /logo.svg
 heroText: LeBao's Wiki
-tagline: You can place the description of the project here.
-actions:
-  - text: How to Use 💡
-    link: /demo/
-    type: primary
+tagline: 
+# actions:
+#   - text: How to Use 💡
+#     link: /demo/
+#     type: primary
 
-  - text: Docs
-    link: /guide/
+#   - text: Docs
+#     link: /guide/
 
 features:
   - title: Markdown Enhance
@@ -95,16 +95,10 @@ features:
     link: https://vuepress-theme-hope.github.io/v2/guide/advanced/pwa.html
 
   - title: More new features
-    icon: more
+    icon: note
     details: Including icon support, fullscreen button, etc.
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/
 
 copyright: false
 footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
-
-This is an example of a project homepage. You can place your main content here.
-
-To use this layout, you need to set `home: true` in the page front matter.
-
-For related descriptions of configuration items, please see [Project HomePage Layout Config](https://vuepress-theme-hope.github.io/v2/guide/layout/home/).
