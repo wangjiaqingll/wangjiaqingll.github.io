@@ -95,7 +95,7 @@ features:
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/advanced/pwa.html
 
   - title: 更多新特性
-    icon: more
+    icon: book
     details: 包括图标支持、全屏按钮、返回顶部按钮等
     link: https://vuepress-theme-hope.github.io/v2/zh/guide/feature/
 copyright: false
