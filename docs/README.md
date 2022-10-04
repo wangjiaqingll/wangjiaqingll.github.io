@@ -16,9 +16,18 @@ tagline: Wecome to lebao's wiki!
 features:
   - title: C++面试题
     icon: repo
-    details: C++语言基础、面向对象、STL等常见面试题
+    details:
     link: interview/cpp-interview.md
 
+  - title: 操作系统面试题
+    icon: repo
+    details:
+    link: interview/system.md
+
+  - title: 计算机网络面试题
+    icon: repo
+    details:
+    link: interview/network.md
   # - title: 幻灯片页面
   #   icon: slides
   #   details: 添加幻灯片页面以显示你喜欢的内容
