@@ -8,13 +8,13 @@ export default defineUserConfig({
     "/": {
       lang: "zh-CN",
       title: "LeBao's Wiki",
-      description: "乐宝的知识小站",
+      description: "",
     },
 
     "/en/": {
       lang: "en-US",
-      title: "Docs Demo",
-      description: "A docs demo for vuepress-theme-hope",
+      title: "LeBao's Wiki",
+      description: "",
     },
   },
 

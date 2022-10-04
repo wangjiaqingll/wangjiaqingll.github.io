@@ -3,16 +3,16 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://wiki.wangjiaqingll.com",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mrhope.site",
+    name: "LeBao",
+    url: "https://wiki.wangjiaqingll.com",
   },
 
   iconAssets: "iconfont",
 
-  logo: "/logo.svg",
+  logo: "/lebao.svg",
 
   repo: "vuepress-theme-hope/vuepress-theme-hope",
 
@@ -48,7 +48,7 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: "Default footer",
+      footer: "LeBao's wiki",
 
       displayFooter: true,
 

@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 主页
-heroImage: /logo.svg
+heroImage: /lebao.svg
 heroText: LeBao's Wiki
 tagline: 乐宝的知识小站
 actions:
