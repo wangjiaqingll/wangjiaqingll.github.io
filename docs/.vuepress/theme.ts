@@ -12,7 +12,7 @@ export default hopeTheme({
 
   iconAssets: "iconfont",
 
-  logo: "/lebao.svg",
+  logo: "https://assets.wangjiaqingll.com/logo/log_%E9%80%8F%E6%98%8E.png",
 
   repo: "wangjiaqingll",
 
